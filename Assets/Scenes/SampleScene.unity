@@ -3903,7 +3903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialPosition: {x: 0, y: 0}
-  speed: 0
+  speed: 2
 --- !u!1 &1478459851
 GameObject:
   m_ObjectHideFlags: 0
@@ -7462,7 +7462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialPosition: {x: 0, y: 35}
-  speed: 0
+  speed: 2
 --- !u!1 &1993555123
 GameObject:
   m_ObjectHideFlags: 0
@@ -9409,7 +9409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c36977ab7c1824b7b9e2899fdb4f2225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 2
 --- !u!1 &2114506495
 GameObject:
   m_ObjectHideFlags: 0
@@ -9424,6 +9424,7 @@ GameObject:
   - component: {fileID: 2114506499}
   - component: {fileID: 2114506500}
   - component: {fileID: 2114506501}
+  - component: {fileID: 2114506502}
   m_Layer: 0
   m_Name: Soldier
   m_TagString: Untagged
@@ -9594,6 +9595,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
+--- !u!114 &2114506502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114506495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7620110f258da48e9ad40ec9590f3bad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
