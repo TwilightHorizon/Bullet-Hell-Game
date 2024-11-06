@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private MovementRigidbody2D movement2D;
+    [SerializeField]
+    private KeyCode         jumpKey = KeyCode.Space;
 
     private void Awake()
     {
@@ -14,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         UpdateMove();
+        UpdateJump();
     }
     
     private void UpdateMove()
@@ -21,4 +24,14 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         movement2D.MoveTo(x);
     }
+
+    private void UpdateJump()
+    {
+        if(Input.GetKeyDown(jumpKey))
+        {
+            movement2D.JumpTo();
+        }
+    }
+
+
 }

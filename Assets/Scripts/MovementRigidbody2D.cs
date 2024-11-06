@@ -7,10 +7,12 @@ public class MovementRigidbody2D : MonoBehaviour
 {
     // Start is called before the first frame update
     [Header("Move Horizontal")]
-    
-
     [SerializeField]
     private float               moveSpeed = 8; //movement speed
+
+    [Header("Move Vertical (Jump)")]
+    [SerializeField]
+    private float               jumpForce = 10;
     private Rigidbody2D         rigid2D;
 
     private void Awake(){
@@ -21,4 +23,11 @@ public class MovementRigidbody2D : MonoBehaviour
     {
         rigid2D.velocity = new Vector2(x * moveSpeed, rigid2D.velocity.y);
     }
+
+    public bool JumpTo()
+    {
+        rigid2D.velocity = new Vector2(rigid2D.velocity.x, jumpForce);
+        return true;
+    }
+
 }
