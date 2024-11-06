@@ -358,7 +358,6 @@ GameObject:
   - component: {fileID: 1159322591}
   - component: {fileID: 1159322593}
   - component: {fileID: 1159322594}
-  - component: {fileID: 1159322595}
   m_Layer: 0
   m_Name: Infinite Tower Tilemap
   m_TagString: Untagged
@@ -3905,7 +3904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialPosition: {x: 0, y: 0}
-  speed: 2
+  speed: 0
 --- !u!19719996 &1159322594
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -3942,25 +3941,6 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
---- !u!251 &1159322595
-PlatformEffector2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1159322589}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RotationalOffset: 0
-  m_UseOneWay: 1
-  m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
-  m_SideArc: 1
 --- !u!1 &1478459851
 GameObject:
   m_ObjectHideFlags: 0
@@ -7520,7 +7500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialPosition: {x: 0, y: 35}
-  speed: 2
+  speed: 0
 --- !u!19719996 &1478459856
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -9664,7 +9644,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -9689,7 +9669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
-  jumpForce: 10
+  jumpForce: 15
 --- !u!114 &2114506502
 MonoBehaviour:
   m_ObjectHideFlags: 0
