@@ -13,7 +13,7 @@ public class InfiniteTowerMovement : MonoBehaviour
     {
         transform.position = initialPosition;
     }
-
+    
     // Update is called once per frame
     void Update()
     {
