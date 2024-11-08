@@ -9,17 +9,29 @@ public class InfiniteTowerMovement : MonoBehaviour
     private Vector2 initialPosition;
     [SerializeField]
     private float speed;
+    private IEnumerator coroutine;
+    private bool startMoving = false;
     void Start()
     {
         transform.position = initialPosition;
+        coroutine = startPause();
+        StartCoroutine(coroutine);
+        
     }
-    
+
     // Update is called once per frame
-    void Update()
+    private IEnumerator startPause()
     {
-        transform.position += Vector3.down * speed * Time.deltaTime;
-        if(transform.position.y < -36f){
-            transform.position = new Vector3(0,34f,0); 
+        yield return new WaitForSeconds(3);
+        startMoving = true;
+    }
+    public void Update()
+    {
+        if (startMoving){
+            transform.position += Vector3.down * speed * Time.deltaTime;
+            if (transform.position.y < -36f) {
+                transform.position = new Vector3(0, 34f, 0);
+            }
         }
     }
     public void turnOnPlatformCollision()
@@ -29,5 +41,9 @@ public class InfiniteTowerMovement : MonoBehaviour
     public void turnOffPlatformCollision()
     {
         GetComponent<Collider2D>().isTrigger = true;
+    }
+    private IEnumerator Wait(float waitTime) 
+    { 
+        yield return new WaitForSeconds(waitTime);
     }
 }

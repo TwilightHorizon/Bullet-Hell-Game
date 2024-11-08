@@ -30,7 +30,6 @@ public class PlayerController : MonoBehaviour
         //If the player presses/holds down [S], they will be able to move through platforms
         if (Input.GetKey(KeyCode.S))
         {
-            print("Test");
             towerScript1.turnOffPlatformCollision();
             towerScript2.turnOffPlatformCollision();
         }

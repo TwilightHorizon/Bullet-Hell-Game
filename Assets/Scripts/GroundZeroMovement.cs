@@ -12,7 +12,7 @@ public class GroundZeroMovement : MonoBehaviour
     private float speed;
 
     private float timer;
-    
+
     // Update is called once per frame
 
     // private void Awake()
@@ -30,10 +30,24 @@ public class GroundZeroMovement : MonoBehaviour
     //     StopCoroutine(nameof(Process));
     //     transform.position = new Vector3(0, -4, 0);
     // }
-    void Update()
+    private IEnumerator coroutine;
+    private bool startMoving = false;
+    private void Awake()
     {
-        transform.position += Vector3.down * speed * Time.deltaTime;
-        
+        coroutine = startPause();
+        StartCoroutine(coroutine);
+    }
+    private IEnumerator startPause()
+    {
+        yield return new WaitForSeconds(3);
+        startMoving = true;
+    }
+    public void Update()
+    {
+        if (startMoving)
+        {
+            transform.position += Vector3.down * speed * Time.deltaTime;
+        }
     }
     // private IEnumerator Process()
     // {
