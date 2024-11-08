@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 1159322594}
   m_Layer: 8
   m_Name: Infinite Tower Tilemap
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4003,7 +4003,7 @@ GameObject:
   - component: {fileID: 1478459856}
   m_Layer: 8
   m_Name: Infinite Tower Tilemap Copy
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7628,6 +7628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc7a8976a2d343ceb99b91f7f57f090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPoints: []
 --- !u!1 &1585015253
 GameObject:
   m_ObjectHideFlags: 0
@@ -9814,6 +9815,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  towerScript1: {fileID: 0}
+  towerScript2: {fileID: 0}
 --- !u!114 &2114506502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9827,6 +9830,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpKey: 32
+  towerScript1: {fileID: 0}
+  towerScript2: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

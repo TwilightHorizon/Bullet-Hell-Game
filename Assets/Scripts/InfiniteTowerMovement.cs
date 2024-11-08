@@ -22,4 +22,12 @@ public class InfiniteTowerMovement : MonoBehaviour
             transform.position = new Vector3(0,34f,0); 
         }
     }
+    public void turnOnPlatformCollision()
+    {
+        GetComponent<Collider2D>().isTrigger = false;
+    }
+    public void turnOffPlatformCollision()
+    {
+        GetComponent<Collider2D>().isTrigger = true;
+    }
 }
