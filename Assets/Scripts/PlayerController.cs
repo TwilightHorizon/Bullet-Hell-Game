@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private KeyCode         jumpKey = KeyCode.Space;
 
+    private bool facingRight = true;
+    
+
     private void Awake()
     {
         movement2D = GetComponent<MovementRigidbody2D>();
@@ -22,6 +25,10 @@ public class PlayerController : MonoBehaviour
     private void UpdateMove()
     {
         float x = Input.GetAxisRaw("Horizontal");
+        
+        if(x > 0 && !facingRight) Flip();
+        else if(x < 0 && facingRight) Flip();
+        
         movement2D.MoveTo(x);
     }
 
@@ -41,5 +48,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void Flip()
+    {
+        Vector3 scale = gameObject.transform.localScale;
+        scale.x *= -1;
+        gameObject.transform.localScale = scale;
+        
+        facingRight = !facingRight;
+    }
 
 }

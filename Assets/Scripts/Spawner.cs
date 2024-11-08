@@ -5,11 +5,18 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    
+    [SerializeField] private Transform[] spawnPoints;
+    private float timer; 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            throw new NotImplementedException();
+            GameManager.instance.pool.Get(0);
+        }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            GameManager.instance.pool.Get(1);
         }
     }
 }

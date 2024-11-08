@@ -60,7 +60,7 @@ public class MovementRigidbody2D : MonoBehaviour
         // if player velocity.y > 0, then it means the player is in a process of jumping
         if (isGrounded && rigid2D.velocity.y <= 0)
         {
-            print("grounded");
+            
             currentJumpCount = maxJumpCount;
         }
         
