@@ -8,16 +8,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private KeyCode         jumpKey = KeyCode.Space;
 
-    public InfiniteTowerMovement towerScript1;
-    public InfiniteTowerMovement towerScript2;
+    [Header("Infinite Tower Tilemap")]
+    [SerializeField]
+    private InfiniteTowerMovement towerScript1;
+    
+    [Header("Infinite Tower Map Copy")]
+    [SerializeField]
+    private InfiniteTowerMovement towerScript2;
     private bool facingRight = true;
     
 
     private void Awake()
     {
         movement2D = GetComponent<MovementRigidbody2D>();
-        towerScript1 = GameObject.Find("Infinite Tower Tilemap").GetComponent<InfiniteTowerMovement>();
-        towerScript2 = GameObject.Find("Infinite Tower Tilemap Copy").GetComponent<InfiniteTowerMovement>();
     }
     private void Update()
     {
