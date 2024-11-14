@@ -29,26 +29,36 @@ public class MovementRigidbody2D : MonoBehaviour
     [SerializeField]
     private LayerMask           groundLayer;        // layer for checking ground collision
     
-    private bool                isGrounded;         // checking if player is on the ground (if player is on ground --> true)
+    public static bool          isGrounded;         // checking if player is on the ground (if player is on ground --> true)
     private Vector2             footPosition;       // player foot position for checking collision with ground
     private Vector2             footArea;           // the area of collision checking for checking ground collision
     
     private Rigidbody2D         rigid2D;
     private new Collider2D      collider2D;         // 현재 오브젝트의 충돌 범위 정보 
 
+<<<<<<< Updated upstream
 
     private Collider2D tilemapCollider1;
     private Collider2D tilemapCollider2;
 
     public bool IsLongJump { set; get; } = false;
+=======
+    [SerializeField]
+>>>>>>> Stashed changes
     public InfiniteTowerMovement towerScript1;
+
+    [SerializeField]
     public InfiniteTowerMovement towerScript2;
+<<<<<<< Updated upstream
+=======
+
+    private float wallWidth = 3.2f; //Used for the offset between the world boundaries and the location of the actual walls
+    public bool IsLongJump { set; get; } = false;
+>>>>>>> Stashed changes
 
     private void Awake(){
         rigid2D     = GetComponent<Rigidbody2D>();
         collider2D  = GetComponent<Collider2D>();
-        towerScript1 = GameObject.Find("Infinite Tower Tilemap").GetComponent<InfiniteTowerMovement>();
-        towerScript2 = GameObject.Find("Infinite Tower Tilemap Copy").GetComponent<InfiniteTowerMovement>();
     }
 
     private void FixedUpdate()
@@ -90,12 +100,27 @@ public class MovementRigidbody2D : MonoBehaviour
             towerScript1.turnOffPlatformCollision();
             towerScript2.turnOffPlatformCollision();
         }
+
+        //Ensures player stays inside the bounds
+        checkBounds();
     }
     public void MoveTo(float x)
     {
         rigid2D.velocity = new Vector2(x * moveSpeed, rigid2D.velocity.y);
     }
     
+<<<<<<< Updated upstream
+=======
+    private void checkBounds()
+    {
+        
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x, 
+            Globals.WorldBounds.min.x+wallWidth, 
+            Globals.WorldBounds.extents.x-wallWidth), 
+            transform.position.y, 0);
+    }
+>>>>>>> Stashed changes
     public bool JumpTo()
     {
         //Jumping function; tracks number of jumps in the air

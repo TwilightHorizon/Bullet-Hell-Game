@@ -9,6 +9,11 @@ public class InfiniteTowerMovement : MonoBehaviour
     private Vector2 initialPosition;
     [SerializeField]
     private float speed;
+<<<<<<< Updated upstream
+=======
+    private IEnumerator coroutine;
+    private int startMoving = 0;
+>>>>>>> Stashed changes
     void Start()
     {
         transform.position = initialPosition;
@@ -17,10 +22,23 @@ public class InfiniteTowerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< Updated upstream
         transform.position += Vector3.down * speed * Time.deltaTime;
         if(transform.position.y < -36f){
             transform.position = new Vector3(0,34f,0); 
+=======
+        yield return new WaitForSeconds(3);
+        startMoving = 1;
+    }
+    public void Update()
+    {
+        
+        transform.position += Vector3.down * speed * Time.deltaTime * startMoving;
+        if (transform.position.y < -36f) {
+            transform.position = new Vector3(0, 34f, 0);
+>>>>>>> Stashed changes
         }
+       
     }
     public void turnOnPlatformCollision()
     {
