@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemyController : Entity
 {
@@ -10,16 +12,19 @@ public class EnemyController : Entity
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        
+        base.Setup();
+    }
+
+    private void OnEnable()
+    {
+        target = GameManager.instance.player; 
         base.Setup();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown("3"))
-        {
-            int damage = Random.Range(1, 100);
-            target.TakeDamage(damage);
-        }
+        
     }
 
     public override float MaxHP => 200;
@@ -33,7 +38,8 @@ public class EnemyController : Entity
 
         StartCoroutine("HitAnimation");
     }
-
+    
+    
     private IEnumerator HitAnimation()
     {
         Color color = spriteRenderer.color;
@@ -46,5 +52,7 @@ public class EnemyController : Entity
         color.a = 1;
         spriteRenderer.color = color;
     }
+
+    
 
 }

@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 431906095972582289}
   - component: {fileID: 3881891276408709}
   - component: {fileID: 4204620037652504812}
+  - component: {fileID: -1111128309984198234}
   m_Layer: 9
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,3 +192,18 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  towerScript1: {fileID: 0}
+  towerScript2: {fileID: 0}
+--- !u!114 &-1111128309984198234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47180607942898131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773681a27ba2c44eaa3a75d4291b583e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
