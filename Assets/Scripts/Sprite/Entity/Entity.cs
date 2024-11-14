@@ -57,10 +57,9 @@ public abstract class Entity : MonoBehaviour
 
 
 [System.Serializable]
-public struct Stats
+public struct Stats 
 {
     // 플레이어, 적 등, 여러 종류의 캐릭터가 공용으로 사용할 수 있도록 캐릭터들이 공통으로 상속받는 Entity 기반 클래스
-
     [HideInInspector] public float HP;
     [HideInInspector] public float MP; 
 }
