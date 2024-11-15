@@ -5,12 +5,15 @@ using UnityEngine;
 
 public abstract class ProjectileBase : MonoBehaviour
 {
-    [SerializeField] private GameObject hitEffect;
+    [SerializeField] 
+    private GameObject hitEffect;
     protected MovementProjectile2D movementProjectile2D;
+    protected float damage;
 
     public virtual void Setup(Transform target, float damage, int maxCount = 1, int index = 0)
     {
         movementProjectile2D = GetComponent<MovementProjectile2D>();
+        this.damage = damage;
     }
 
     private void Update()
@@ -24,7 +27,8 @@ public abstract class ProjectileBase : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Instantiate(hitEffect, transform.position, Quaternion.identity); 
+            Instantiate(hitEffect, transform.position, Quaternion.identity);
+            collision.gameObject.GetComponent<Entity>().TakeDamage(damage);
             gameObject.SetActive(false);
         }
     }

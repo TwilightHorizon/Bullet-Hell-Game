@@ -6,7 +6,8 @@ using UnityEngine;
 public class MovementProjectile2D : MonoBehaviour
 {
     
-    [SerializeField] private float moveSpeed = 10f;
+    [SerializeField] 
+    private float moveSpeed = 10f;
     private Rigidbody2D rb;
     
     public float MoveSpeed => moveSpeed;

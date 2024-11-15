@@ -34,18 +34,7 @@ public class PlayerController : Entity
         UpdateJump();
         MoveDown();
         
-        // testing: 
-        if (Input.GetKeyDown("1"))
-        {
-            target.TakeDamage(20);
-        }
-
-        // 스킬 공격
-        else if (Input.GetKeyDown("2"))
-        {
-            MP -= 100;
-            target.TakeDamage(55);
-        }
+        
         
     }
     

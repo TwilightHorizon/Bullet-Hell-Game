@@ -1,22 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/// <summary>
-/// projectile for types that move in straight traj
-/// one of the samples that i provide wizdid
-/// </summary>
-public class ProjectileStraight : ProjectileBase
-{
 
+public class ProjectileHoming : ProjectileBase
+{
+    private Transform target;
     public override void Setup(Transform target, float damage, int maxCount = 1, int index = 0)
     {
         base.Setup(target, damage);
 
-        movementProjectile2D.MoveTo((target.position - transform.position).normalized);
+        this.target = target;
     }
 
     public override void Process()
     {
-        
+        movementProjectile2D.MoveTo((target.position - transform.position).normalized);
     }
 }
