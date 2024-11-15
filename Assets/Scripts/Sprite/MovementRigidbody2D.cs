@@ -28,22 +28,24 @@ public class MovementRigidbody2D : MonoBehaviour
     [SerializeField]
     private LayerMask           groundLayer;        // layer for checking ground collision
     
-    private bool                isGrounded;         // checking if player is on the ground (if player is on ground --> true)
+    private static bool         isGrounded;         // checking if player is on the ground (if player is on ground --> true)
     private Vector2             footPosition;       // player foot position for checking collision with ground
     private Vector2             footArea;           // the area of collision checking for checking ground collision
     
     private Rigidbody2D         rigid2D;
     private new Collider2D      collider2D;         // 현재 오브젝트의 충돌 범위 정보 
 
+    [SerializeField]
     public InfiniteTowerMovement towerScript1;
+    [SerializeField]
     public InfiniteTowerMovement towerScript2;
     public bool IsLongJump { set; get; } = false;
 
     private void Awake(){
         rigid2D     = GetComponent<Rigidbody2D>();
         collider2D  = GetComponent<Collider2D>();
-        towerScript1 = GameObject.Find("Infinite Tower Tilemap").GetComponent<InfiniteTowerMovement>();
-        towerScript2 = GameObject.Find("Infinite Tower Tilemap Copy").GetComponent<InfiniteTowerMovement>();
+        //towerScript1 = GameObject.Find("Infinite Tower Tilemap").GetComponent<InfiniteTowerMovement>();
+        //towerScript2 = GameObject.Find("Infinite Tower Tilemap Copy").GetComponent<InfiniteTowerMovement>();
     }
 
     private void FixedUpdate()

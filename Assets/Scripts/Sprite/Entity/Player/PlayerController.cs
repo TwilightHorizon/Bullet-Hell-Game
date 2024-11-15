@@ -20,6 +20,8 @@ public class PlayerController : Entity
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D         rigid2D;
 
+    [SerializeField]
+    private float wallWidth;
     private void Awake()
     {
         movement2D = GetComponent<MovementRigidbody2D>();
@@ -33,7 +35,7 @@ public class PlayerController : Entity
         UpdateMove();
         UpdateJump();
         MoveDown();
-        
+        checkBounds();
         
         
     }
@@ -77,6 +79,14 @@ public class PlayerController : Entity
         movement2D.MoveTo(x); //x
     }
 
+    private void checkBounds()
+    { 
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x,
+            Globals.WorldBounds.min.x + wallWidth,
+            Globals.WorldBounds.extents.x - wallWidth),
+            transform.position.y, 0);
+    }
     private void UpdateJump()
     {
         if(Input.GetKeyDown(jumpKey))
