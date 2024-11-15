@@ -20,15 +20,22 @@ public class PlayerController : MonoBehaviour
 =======
     [Header("Infinite Tower Tilemap")]
     [SerializeField]
-    private InfiniteTowerMovement towerScript1;
+    public static InfiniteTowerMovement towerScript1;
     
     [Header("Infinite Tower Map Copy")]
     [SerializeField]
-    private InfiniteTowerMovement towerScript2;
+    public static InfiniteTowerMovement towerScript2;
     private bool facingRight = true;
     
     private SpriteRenderer spriteRenderer;
+<<<<<<< Updated upstream:Assets/Scripts/PlayerController.cs
     private Rigidbody2D rigid2D;
+=======
+    private Rigidbody2D         rigid2D;
+
+    [SerializeField]
+    private float wallWidth;
+>>>>>>> Stashed changes:Assets/Scripts/Sprite/Entity/Player/PlayerController.cs
     private void Awake()
     {
         movement2D = GetComponent<MovementRigidbody2D>();
@@ -94,6 +101,41 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+<<<<<<< Updated upstream:Assets/Scripts/PlayerController.cs
 
+=======
+    //Ensures player stays within the walls
+    private void checkBounds()
+    {
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x,
+            Globals.WorldBounds.min.x + wallWidth,
+            Globals.WorldBounds.extents.x - wallWidth),
+            transform.position.y, 0);
+    }
+    void Flip()
+    {
+        Vector3 scale = gameObject.transform.localScale;
+        scale.x *= -1;
+        gameObject.transform.localScale = scale;
+        
+        facingRight = !facingRight;
+    }
+    
+    private IEnumerator HitAnimation()
+    {
+        Color color = spriteRenderer.color;
+
+        color.a = 0.2f;
+        spriteRenderer.color = color;
+        
+        yield return new WaitForSeconds(0.1f);
+
+        color.a = 1;
+        spriteRenderer.color = color;
+    }
+
+    
+>>>>>>> Stashed changes:Assets/Scripts/Sprite/Entity/Player/PlayerController.cs
 
 }

@@ -36,11 +36,21 @@ public class MovementRigidbody2D : MonoBehaviour
     private Rigidbody2D         rigid2D;
     private new Collider2D      collider2D;         // 현재 오브젝트의 충돌 범위 정보 
 
+<<<<<<< Updated upstream:Assets/Scripts/MovementRigidbody2D.cs
 <<<<<<< Updated upstream
 
     private Collider2D tilemapCollider1;
     private Collider2D tilemapCollider2;
 
+=======
+    [SerializeField]
+    private InfiniteTowerMovement towerScript1;
+
+    [SerializeField]
+    private InfiniteTowerMovement towerScript2;
+
+    
+>>>>>>> Stashed changes:Assets/Scripts/Sprite/MovementRigidbody2D.cs
     public bool IsLongJump { set; get; } = false;
 =======
     [SerializeField]
@@ -135,6 +145,8 @@ public class MovementRigidbody2D : MonoBehaviour
 
         return false; 
     }
+    
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         //If player collides with a platform while moving downwards and their feet are above the platform, they will stop at the platform

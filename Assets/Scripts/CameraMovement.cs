@@ -6,8 +6,13 @@ public class CameraMovement : MonoBehaviour
 {
     private Camera mainCamera;
     private Bounds cameraBounds;
+<<<<<<< Updated upstream
     private Vector3 targetPosition = new Vector3(0,0,-10);
     
+=======
+    private Vector3 targetPosition = new Vector3(0, 0, -10);
+
+>>>>>>> Stashed changes
 
     private void Awake()
     {
@@ -26,7 +31,11 @@ public class CameraMovement : MonoBehaviour
 
         cameraBounds = new Bounds();
         cameraBounds.SetMinMax(
+<<<<<<< Updated upstream
             new Vector3(minX, minY, 0), 
+=======
+            new Vector3(minX, minY, 0),
+>>>>>>> Stashed changes
             new Vector3(maxX, maxY, 0)
             );
 
@@ -42,6 +51,7 @@ public class CameraMovement : MonoBehaviour
 
     private void LateUpdate()
     {
+<<<<<<< Updated upstream
        // transform.position = targetPosition
     }
     void Update()
@@ -49,3 +59,12 @@ public class CameraMovement : MonoBehaviour
         
     }
 }
+=======
+        // transform.position = targetPosition
+    }
+    void Update()
+    {
+
+    }
+}
+>>>>>>> Stashed changes
