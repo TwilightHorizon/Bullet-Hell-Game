@@ -89,6 +89,8 @@ public class MovementRigidbody2D : MonoBehaviour
     }
     public void MoveTo(float x)
     {
+        //rigid2D.velocity = direction * moveSpeed;
+        // for float x
         rigid2D.velocity = new Vector2(x * moveSpeed, rigid2D.velocity.y);
     }
 

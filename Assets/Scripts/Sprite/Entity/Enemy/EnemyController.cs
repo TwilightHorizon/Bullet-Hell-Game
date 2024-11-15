@@ -12,6 +12,7 @@ public class EnemyController : Entity
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        target = GameManager.instance.player;
         
         base.Setup();
     }

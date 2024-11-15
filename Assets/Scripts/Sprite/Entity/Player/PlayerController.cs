@@ -18,11 +18,13 @@ public class PlayerController : Entity
     private bool facingRight = true;
     
     private SpriteRenderer spriteRenderer;
-    
+    private Rigidbody2D         rigid2D;
+
     private void Awake()
     {
         movement2D = GetComponent<MovementRigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        rigid2D = GetComponent<Rigidbody2D>();
         base.Setup();
         
     }
@@ -83,7 +85,7 @@ public class PlayerController : Entity
         if(x > 0 && !facingRight) Flip();
         else if(x < 0 && facingRight) Flip();
         
-        movement2D.MoveTo(x);
+        movement2D.MoveTo(x); //x
     }
 
     private void UpdateJump()
