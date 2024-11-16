@@ -36,9 +36,9 @@ public class MovementRigidbody2D : MonoBehaviour
     private new Collider2D      collider2D;         // 현재 오브젝트의 충돌 범위 정보 
 
     [SerializeField]
-    public InfiniteTowerMovement towerScript1;
+    private InfiniteTowerMovement towerScript1;
     [SerializeField]
-    public InfiniteTowerMovement towerScript2;
+    private InfiniteTowerMovement towerScript2;
     public bool IsLongJump { set; get; } = false;
 
     private void Awake(){
