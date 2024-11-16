@@ -34,14 +34,7 @@ public class InfiniteTowerMovement : MonoBehaviour
             }
         }
     }
-    public void turnOnPlatformCollision()
-    {
-        GetComponent<Collider2D>().isTrigger = false;
-    }
-    public void turnOffPlatformCollision()
-    {
-        GetComponent<Collider2D>().isTrigger = true;
-    }
+
     private IEnumerator Wait(float waitTime) 
     { 
         yield return new WaitForSeconds(waitTime);

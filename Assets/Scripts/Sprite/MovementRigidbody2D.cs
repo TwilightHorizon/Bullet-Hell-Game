@@ -28,7 +28,7 @@ public class MovementRigidbody2D : MonoBehaviour
     [SerializeField]
     private LayerMask           groundLayer;        // layer for checking ground collision
     
-    private static bool         isGrounded;         // checking if player is on the ground (if player is on ground --> true)
+    public static bool          isGrounded;         // checking if player is on the ground (if player is on ground --> true)
     private Vector2             footPosition;       // player foot position for checking collision with ground
     private Vector2             footArea;           // the area of collision checking for checking ground collision
     
@@ -81,12 +81,7 @@ public class MovementRigidbody2D : MonoBehaviour
             rigid2D.gravityScale = highGravity;
         }
 
-        //While the player is in the air, they will not collide with any platforms
-        if (!isGrounded)
-        {
-            towerScript1.turnOffPlatformCollision();
-            towerScript2.turnOffPlatformCollision();
-        }
+
     }
     public void MoveTo(float x)
     {
@@ -108,19 +103,6 @@ public class MovementRigidbody2D : MonoBehaviour
 
         return false; 
     }
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        //If player collides with a platform while moving downwards and their feet are above the platform, they will stop at the platform
-        if (collision.tag == "Platform" && rigid2D.velocity.y <= 0)
-        {
-            if (footPosition.y > collision.ClosestPoint(transform.position).y)
-            {
-                towerScript1.turnOnPlatformCollision();
-                towerScript2.turnOnPlatformCollision();
 
-            }
-        }
-
-    }
 
 }
