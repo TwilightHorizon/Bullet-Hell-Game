@@ -402,6 +402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 341378783}
   - component: {fileID: 341378782}
+  - component: {fileID: 341378784}
   m_Layer: 0
   m_Name: background_1
   m_TagString: Untagged
@@ -476,6 +477,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &341378784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341378781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd60aae3a42b322428e1f8b253cd3913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &412666019
 GameObject:
   m_ObjectHideFlags: 0
@@ -11140,8 +11153,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  towerScript1: {fileID: 0}
-  towerScript2: {fileID: 0}
+  towerScript1: {fileID: 1159322593}
+  towerScript2: {fileID: 1478459855}
 --- !u!114 &2114506502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11158,6 +11171,7 @@ MonoBehaviour:
   jumpKey: 32
   towerScript1: {fileID: 1159322593}
   towerScript2: {fileID: 1478459855}
+  wallWidth: 3.17
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

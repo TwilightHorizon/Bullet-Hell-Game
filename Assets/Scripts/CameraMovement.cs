@@ -42,7 +42,7 @@ public class CameraMovement : MonoBehaviour
 
     private void LateUpdate()
     {
-        // transform.position = targetPosition
+        transform.position = GetCameraBounds();
     }
     void Update()
     {

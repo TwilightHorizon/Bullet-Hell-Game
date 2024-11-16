@@ -44,8 +44,7 @@ public class MovementRigidbody2D : MonoBehaviour
     private void Awake(){
         rigid2D     = GetComponent<Rigidbody2D>();
         collider2D  = GetComponent<Collider2D>();
-        //towerScript1 = GameObject.Find("Infinite Tower Tilemap").GetComponent<InfiniteTowerMovement>();
-        //towerScript2 = GameObject.Find("Infinite Tower Tilemap Copy").GetComponent<InfiniteTowerMovement>();
+
     }
 
     private void FixedUpdate()
